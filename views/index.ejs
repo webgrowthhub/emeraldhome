@@ -72,9 +72,10 @@
                 <div class="spacer--60"></div>
             <!-- product carousel -->
             <div class="owl-carousel">
+                <% if ( typeof(Allproducts) !='undefined') { %>
 
                 <% if (typeof Allproducts[0]=='object') { %>
-                    <% if ( typeof(Allproducts) !='undefined') { %>
+                   
                         <% Allproducts.forEach(function(productdata) { %>
                         <div>                     
                             <div class="col-12 ">
