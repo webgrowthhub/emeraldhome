@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style type="text/css">
+      body {
+    color:#000;
+}
+
+.product-page img {
+ min-height:250px;
+ object-fit:cover;
+}
+
+/***  3-4-2020 ***/
+.contact-number {
+    margin: 10px 0px;
+}
+.contact-number h5 {
+    margin-bottom: 0px;
+}
+    .contact-number a {
+        font-size: 17px;
+        margin: 0 17px 0px;
+        color: #000;
+        line-height: 26px;
+
+    }
+.allfields {
+    text-align: center;
+}
+.terms_conditions label a {
+    display: inline !important;
+    padding: 0;
+}
+.terms_conditions label {
+    display: inline-block;
+}
+.terms_conditions input {
+    width: auto;
+    height: auto !important;
+}
+.terms_conditions label {
+    display: inline-block;
+    cursor: pointer;
+}
+/***  3-4-2020 ***/
+
+.heading_content {
+    font-size: 40px;
+    font-family: "Barlow", Sans-serif;
+    font-weight: 600;
+    text-align: center;
+    padding: 0px 0px 40px 0;
+}
+.bg-dark {
+    background-color: #000000!important;
+}
+.main_menu img {
+    max-width:74%;
+}
+.main_menu.navbar-dark .navbar-nav .nav-link {
+    color:#fff;
+}
+.header-banner {
+    margin-top: 106px;
+}
+.top-content p  {
+    font-family: 'Georgia';
+    font-weight: bold;
+    font-style: italic;
+    margin: 22px 0px;
+}
+.search_form > div {
+    margin-bottom: 30px;
+}
+.top-content h2  {
+    font-size: 30px;
+    font-family: 'Georgia';
+    font-weight: bold;
+    
+}
+.top-content h3 {
+    font-size: 22px;
+    margin: 30px 0px !important;
+    font-weight: bold;
+}
+.seach_login a {
+    color: #fff;
+    background: #e29300;
+    display: inline-block;
+    height: 45px;
+    margin: 19px 9px;
+    line-height: 41px;    
+    border-radius: 5px;   
+    min-width: 111px;
+}
+.search_form {
+    margin: 26px 0px;
+}
+.search_form input {
+    border-radius: 50px;
+    border: solid 1px #ccc;
+    min-height: 44px;
+}
+.search_form button {
+    border-radius: 50px;
+    height: 45px;
+    width: 140px;
+}
+.blue-bg {
+    background-color: #469795;
+    padding:40px 0px 103px;
+    margin: 50px 0px;
+}
+.blue-bg h3 {
+    font-size: 44px;
+    font-family: "Barlow", Sans-serif;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+.blue-bg p {
+    font-family: 'Georgia';  
+    font-style: italic;
+    margin:10px 0 10px;
+}
+.create_account {
+    padding: 60px 0px;
+}
+.create_account h3 {
+    font-size: 40px;
+    font-family: "Barlow", Sans-serif;
+    font-weight: 600;
+    padding: 30px 0px;
+}
+.create_account p {
+    margin: 20px 0px;
+    font-family: 'Georgia';     
+}
+.contact_form {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+.contact_form label {
+    font-family: 'Georgia';  
+}
+.contact_form button  {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+}
+.footer {
+    padding: 30px 0;
+}
+.footer img {
+    max-width: 27%;
+}
+.footer p {
+    color:#fff;
+    font-family: "Barlow", Sans-serif;
+    font-size: 11px;
+    margin: 0px ;
+}
+.create_account img {
+    margin-top: 20px;
+}
+
+/********* login and sign up pages *******/
+.inner-pages {
+    margin-top:106px;
+}
+.login_signup form {
+    border: 0px solid #000000;
+    padding: 30px;
+    margin: -72px 0px 60px;
+    box-shadow: 0px 0px 14px #40404091;
+    border-radius: 5px;
+    background: #fff;
+}
+.login_signup input {
+    height: 50px;
+    border-radius: 50px;
+    padding: 0 20px;
+    font-size: 14px;
+    color: #000;
+}
+.login_signup button, .login_signup a {
+    width: 100%;
+    border-radius: 50px;
+    padding: 10px;
+    margin: 15px 0px;
+    display: inline-block !important;
+}
+.login_signup a {
+    margin:0px;
+    display: inline-block;
+}
+a.forget_pass {
+    padding: 0;
+    display: inline !important;
+}
+
+.divider {
+    position: relative;
+    margin: 20px 0px !important;
+}
+.divider:after {
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+    height: 1px;
+    background: #cacaca;
+    content: '';
+    left: 0;
+    right: 0;
+    top: 12px;
+}
+.divider span {
+    background: #fff;
+    position: relative;
+    z-index: 9;
+    padding: 2px 5px;
+    color: #cacaca;
+}
+.login-bg {
+    
+    padding: 50px 0px;
+    color: #fff;
+    min-height: 230px;
+    background: #469795 url(../images/background-pt.png);
+    background-repeat: no-repeat;
+    background-size: 100%;    
+}
+.login-bg h2 {
+    font-size: 46px;
+}
+/********* login and sign up pages *******/
+
+
+/******** responsive *******/
+
+@media screen and (max-width:767px) {
+.blue-bg {
+margin: 50px 0px 0;
+}
+.col-12.col-md-4.col-lg-4.text-left label {
+    display: none;
+}
+.create_account {
+    padding: 0 0px;
+}
+.blue-bg h3 {
+    font-size: 33px;
+}
+.create_account h3 {
+    font-size: 30px;
+}
+  .search_form button {
+    border-radius: 50px;
+    height: 45px;
+    margin: 0 auto;
+    width: 140px;
+    display: block;
+}
+    .header-banner {
+        margin-top: 55px;
+    } 
+    .main_menu img {
+        max-width: 100%;
+    }
+    .inner-pages {
+        margin-top: 60px;
+    }
+    .login-bg h2 {
+        font-size: 40px;
+    }
+    .col {
+        width: 100%;
+        flex-basis: 100%;
+        margin: 10px 0px;
+    }
+    .login_signup form {
+        padding: 30px 20px;
+    }
+
+    .login-bg {
+        min-height: 215px;
+    }
+    .main_menu li a span {
+        display: none;
+    }
+    
+    
+}
+.login_signup .col-12 {
+    position: relative;
+}
+.login_signup .row {
+    position: relative;
+}
+.allfields {
+    text-align: center;
+    font-size: 16px;
+    position: relative;
+    top: 4px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    font-weight: 500;
+}   
+.firstname {
+    font-size: 14px;
+}       
+.messageClass {
+    position: absolute;
+    bottom: -17px;
+    font-size: 14px !important;
+    color: red;
+    left: 12px;
+}
+.login-page .messageClass {
+    top: 17px;
+    right: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    height: 27px;
+    font-size: 18px;
+    display: inline-block;
+}
+
+@font-face {
+    font-family: 'Georgia';
+    src: url('../fonts/Georgia-BoldItalic.eot');
+    src: url('../fonts/Georgia-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Georgia-BoldItalic.woff2') format('woff2'),
+        url('../fonts/Georgia-BoldItalic.woff') format('woff'),
+        url('../fonts/Georgia-BoldItalic.ttf') format('truetype'),
+        url('../fonts/Georgia-BoldItalic.svg#Georgia-BoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Georgia';
+    src: url('../fonts/Georgia.eot');
+    src: url('../fonts/Georgia.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Georgia.woff2') format('woff2'),
+        url('../fonts/Georgia.woff') format('woff'),
+        url('../fonts/Georgia.ttf') format('truetype'),
+        url('../fonts/Georgia.svg#Georgia') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Georgia';
+    src: url('../fonts/Georgia-BoldItalic_1.eot');
+    src: url('../fonts/Georgia-BoldItalic_1.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Georgia-BoldItalic_1.woff2') format('woff2'),
+        url('../fonts/Georgia-BoldItalic_1.woff') format('woff'),
+        url('../fonts/Georgia-BoldItalic_1.ttf') format('truetype'),
+        url('../fonts/Georgia-BoldItalic_1.svg#Georgia-BoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Georgia';
+    src: url('../fonts/Georgia-Bold.eot');
+    src: url('../fonts/Georgia-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Georgia-Bold.woff2') format('woff2'),
+        url('../fonts/Georgia-Bold.woff') format('woff'),
+        url('../fonts/Georgia-Bold.ttf') format('truetype'),
+        url('../fonts/Georgia-Bold.svg#Georgia-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Georgia';
+    src: url('../fonts/Georgia_1.eot');
+    src: url('../fonts/Georgia_1.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Georgia_1.woff2') format('woff2'),
+        url('../fonts/Georgia_1.woff') format('woff'),
+        url('../fonts/Georgia_1.ttf') format('truetype'),
+        url('../fonts/Georgia_1.svg#Georgia') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Georgia';
+    src: url('../fonts/Georgia-Italic.eot');
+    src: url('../fonts/Georgia-Italic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Georgia-Italic.woff2') format('woff2'),
+        url('../fonts/Georgia-Italic.woff') format('woff'),
+        url('../fonts/Georgia-Italic.ttf') format('truetype'),
+        url('../fonts/Georgia-Italic.svg#Georgia-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Barlow:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+    
+    <title>Emeraldpark Memorial</title>
+   
+  </head>
+  <body>
+        <header> 
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top main_menu">
+        <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand col-6 col-md-5 col-lg-5" href="/"><img src="https://emeraldparkmemorial.com.au/images/logo.png" alt="logo"></a>
+      
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navbar links -->
+            <div class="collapse navbar-collapse col-6 col-lg-7 col-md-7 justify-content-end" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+                </li>
+                <% if ( typeof(usersession) !='undefined') { %>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://emeraldparkmemorial.com.au/profile"> Profile </a>
+                    </li>
+
+                  <% } %>
+                <li class="nav-item">
+                <a class="nav-link" href="#abt_us">About</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="https://emeraldparkmemorial.com.au/product"> Product</a>
+                </li>
+                
+                <li class="nav-item">
+                <a class="nav-link" href="/#contact_vv"> Contact Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" target="_blank" href="https://emeraldparkmemorial.com.au/FAQ.pdf"> FAQ</a>
+                  </li>
+                <% if ( typeof(usersession) !='undefined') { %>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://emeraldparkmemorial.com.au/logout"> Logout </a>
+                    </li>
+
+                  <% }else{ %>
+                    <li class="nav-item">
+                      <a class="nav-link" href="https://emeraldparkmemorial.com.au/login"> Login </a>
+                      </li>
+                      <li class="nav-item">
+                        
+                      <a class="nav-link" href="https://emeraldparkmemorial.com.au/signup"><span>| &nbsp;</span> SignUp</a>
+                      </li> 
+                 <% } %>
+               
+                </ul>
+            </div>
+         </div>
+      </nav>
+    </header>
+
+    <section class="header-banner">
+      <img class="img-fluid" src="https://emeraldparkmemorial.com.au/images/header-img.png" alt="image" alt="header-image">
+    </section>
+    <main>
+        <section class="top-content mt-4">
+        <div class="container text-center"> 
+            <h2> Emerald Park Memorial</h2>    
+            <p> The only place to create a plaque that tells the story of your loved one..</p>    
+           
+            <p> The interactive plaque we provide you with will contain the life journal you create.  Change the content as often as you like, with video/pictures/audio of your loved one.  You choose what is left behind..</p>    
+            <!-- <p> &nbsp;</p> -->
+            <p> Our unique plaques can be displayed anywhere you wouldd like to have your loved one remembered e.g. a  fire mantle, next to a grave site, attached to a tree,  in a garden or your own  special place.</p>    
+           
+            <p> We offer a carefully selected range of products to suit all types of settings.</p>   
+             <p>Point your device's camera at the mountable plaque. You will instantly view the memorial of the life left behind.</p>     
+            <p> &nbsp;</p>
+            <p>  <span>Click sign up to create your account. Your account will become live once you've activated it by paying the one off fee of $299.</span><br> You will then have full access to upload videos, images, and audio of your loved one.</p>
+             <p> &nbsp;</p> 
+         <div id="abt_us"></div>   
+            <form method="POST">
+              
+            <h3> Search our data base for lost loved ones</h3>
+            <div class="form-group search_form col-12 col-md-9 col-lg-9 mx-auto d-flex justify-content-center flex-wrap">
+                
+            
+            
+            <div class="col-12 col-md-4 col-lg-4 text-left" style="margin-top: 35px;">
+                <label for="inputDateDeath" class="col-form-label"></label>
+                 <a class="btn btn-primary " href="https://emeraldparkmemorial.com.au/#abt_us">Click Here to Search your lost Loved Ones</a>
+                </div>
+            </div>
+            </form>
+         </div>           
+        </section>
+        
+    <section class="blue-bg" >
+        <div class="container text-center">
+        <h3 class="text-white"> About Emerald Park</h3> 
+        <p> At Emerald Park, we believe life stories should never be lost.</p>   
+        <p class="my-0"> &nbsp;</p>
+        <p>We recognise life is a unique journey and the significance of preserving these life stories.  </p>
+        <p>We strive to offer a place of remembrance, and provide a platform to ensure your loved ones memory is honoured and their life story lives on for future generations.  </p>
+        <p class="my-0"> &nbsp;</p>   
+        <p>We have created an easy way to celebrate a life to share with others. </p>         
+        </div>
+    </section>
+
+    <section class="create_account">
+        <div class="container text-center">
+            <h3>Create Your Account & Preserve A Memory</h3>
+            <!-- <p>  Click sign up for a new account </p>
+            <p> or</p>
+            <p> Click login to edit your memorial</p> -->
+            <img class="img-fluid" src="https://emeraldparkmemorial.com.au/images/Steps.jpg" alt="steps">
+        </div>
+    </section>
+    <section class="contact_form" id="contact_vv">
+            <div class="container ">
+                <h3 class="heading_content"> Contact Us
+                    <div class="d-flex align-items-center flex-wrap contact-number text-center justify-content-center"> <h5> Phone Number:</h5> <a href="tel:1300289748" >1300 289 748</a>  
+                    </div>
+                </h3>
+              
+                <div class="d-flex flex-wrap">
+                    <div class="col-12 col-lg-6 col-md-6">
+                    <form>
+
+                        <div class="form-group">
+                            <label for="email">Your Name (required)</label>
+                            <input type="text" class="form-control" placeholder="Enter your name" id="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email (required)</label>
+                            <input type="email" class="form-control" placeholder="Enter email" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea class="form-control" rows="8" placeholder="Type your message"></textarea>
+                        </div>
+                       
+                        <button type="submit" class="btn btn-primary">Send</button>
+                        </form>
+                    </div>
+                    <div class="col-12 col-lg-6 col-md-6">
+                         
+                            <iframe frameborder="0" width="100%" height="100%" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=Ballarat&amp;t=m&amp;z=11&amp;output=embed&amp;iwloc=near" aria-label="Ballarat"></iframe>
+                        </div>
+                      
+                </div>
+           </div>
+    </section>
+    </main>
+    <footer class="footer bg-dark">
+    <div class="container text-center">
+        <img src="https://emeraldparkmemorial.com.au/images/logo.png"  alt="logo">
+     <p>All rights reserved © 2020 Emerald Park Memorial     </p>
+    </div>
+</footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+  
+
+  </body>
+</html>
