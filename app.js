@@ -39,4 +39,21 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.get('/', function(req, res, next) {
+  var getuser=userModel.UserModel.find({email : req.session.user}).countDocuments();
+  getuser.exec((err,data)=>{
+    var userProduct=userModel.productData.find({  product_status : 1 }).limit(20);
+    userProduct.exec((errr,Allproductts)=>{
+      if(data > 0){
+        res.render('index', {usersession: req.session.user,Allproducts: Allproductts});
+      }else{
+        req.session.reset();
+        res.render('index', {usersession: undefined  ,Allproducts: Allproductts});
+      }
+    })
+   
+  })
+  
+});
+
 module.exports = app;
