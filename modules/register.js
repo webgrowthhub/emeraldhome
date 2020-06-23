@@ -1,12 +1,5 @@
 const mongoose= require('mongoose');
-mongoose.connect('mongodb://rahul:simonadmin@localhost:27017/emerald',{useNewUrlParser:true , useCreateIndex:true,useUnifiedTopology: true,}).catch(error => handleError(error));
-
-// Or:
-try {
-   mongoose.connect('mongodb://rahul:simonadmin@localhost:27017/emerald', { useNewUrlParser: true });
-} catch (error) {
-  handleError(error);
-}
+mongoose.connect('mongodb://rahul:simonadmin@167.172.18.159:27017/emerald',{useNewUrlParser:true , useCreateIndex:true,useUnifiedTopology: true,});
 
 var conn =mongoose.Collection;
 
