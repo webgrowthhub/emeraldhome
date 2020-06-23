@@ -3,7 +3,7 @@ mongoose.connect('mongodb://rahul:simonadmin@localhost:27017/emerald',{useNewUrl
 
 // Or:
 try {
-  await mongoose.connect('mongodb://rahul:simonadmin@localhost:27017/emerald', { useNewUrlParser: true });
+   mongoose.connect('mongodb://rahul:simonadmin@localhost:27017/emerald', { useNewUrlParser: true });
 } catch (error) {
   handleError(error);
 }
