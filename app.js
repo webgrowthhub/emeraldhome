@@ -40,17 +40,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.get('/', function(req, res, next) {
 
-    var userProduct=userModel.productData.find({  product_status : 1 }).limit(20);
-    userProduct.exec((errr,Allproductts)=>{
-      res.send(Allproductts);
-        //res.render('index', {usersession: undefined  ,Allproducts: Allproductts});
-      
-    })
-   
-  
-  
-});
 
 module.exports = app;

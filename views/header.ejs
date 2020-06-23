@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+ 
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        
+    <link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="./stylesheets/custom.css">
+                <link rel="stylesheet" href="./stylesheets/fonts.css">
+             <link rel="stylesheet" href="./stylesheets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./stylesheets/owl.carousel.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Barlow:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/529ea2b962.js" crossorigin="anonymous"></script>
+    <title>Emeraldpark Memorial</title>
+   
+  </head>
+  <body>
+        <header> 
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top main_menu">
+        <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand col-6 col-md-5 col-lg-5" href="/"><img src="./images/logo.png" alt="logo"></a>
+      
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navbar links -->
+            <div class="collapse navbar-collapse col-6 col-lg-7 col-md-7 justify-content-end" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+                </li>
+                <% if ( typeof(usersession) !='undefined') { %>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="http://emeraldparkmemorial.com.au/profile"> Profile </a>
+                    </li>
+
+                  <% } %>
+                <li class="nav-item">
+                <a class="nav-link" href="http://emeraldparkmemorial.com.au/#home_about">About</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="http://emeraldparkmemorial.com.au/product"> Products</a>
+                </li>
+                
+                <li class="nav-item">
+                <a class="nav-link" href="http://emeraldparkmemorial.com.au/#contact_vv"> Contact Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" target="_blank" href="http://emeraldparkmemorial.com.au/FAQ.pdf"> FAQ</a>
+                  </li>
+                <% if ( typeof(usersession) !='undefined' && usersession.substring(0, 5) !='guest') { %>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="http://emeraldparkmemorial.com.au/logout"> Logout </a>
+                    </li>
+
+                  <% }else{ %>
+                    <li class="nav-item">
+                      <a class="nav-link" href="http://emeraldparkmemorial.com.au/login"> Login </a>
+                      </li>
+                      <li class="nav-item">
+                        
+                      <a class="nav-link" href="http://emeraldparkmemorial.com.au/signup"><span>| &nbsp;</span> Create your account</a>
+                      </li> 
+                 <% } %>
+               
+                </ul>
+            </div>
+         </div>
+      </nav>
+    </header>

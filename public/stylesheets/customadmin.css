@@ -1,0 +1,42 @@
+.filter-box label {
+    width: 130px;
+    margin: 0px;
+ }
+ .filter-box {
+    padding: 13px 13px 0;
+ }
+ .filter-box .btn.btn-info {
+    width: auto;
+    min-width: 92px;
+ }
+ .filter-box .col-5:last-child {
+    max-width: 8%;
+    flex: 0 0 8%;
+ }
+ .filter-box .col-5 {
+    max-width: 23%;
+    flex: 0 0 23%;
+ }
+
+
+
+@media only screen and (max-width: 600px) {
+.search_filter input {
+   width: 100% !important;
+}
+.filter-box > div {
+   margin: 9px 0px;
+}
+.filter-box > div:last-child label {
+   display: none;
+}
+.content-wrapper {
+   margin-top: 0;
+}
+.filter-box .col-5 {
+
+   max-width: 100%;
+   flex: 0 0 100%;
+
+}
+}

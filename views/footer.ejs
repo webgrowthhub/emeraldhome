@@ -1,0 +1,153 @@
+<footer class="footer bg-dark">
+    <div class="container text-center">
+        <img src="./images/logo.png"  alt="logo">
+     <p>All rights reserved © 2020 Emerald Park Memorial     </p>
+    </div>
+    <div class="text-center social-media"> 
+      <a target="_blank" href="https://www.facebook.com/Emerald-Park-Memorial-114866203602869/"><i class="fab fa-facebook-f" aria-hidden="true"></i> </a>
+      <a target="_blank" href="https://www.instagram.com/emerald_park_memorial/"> <i class="fab fa-instagram" aria-hidden="true"></i> </a> </div>
+</footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+   <script src="./javascripts/jquery.min.js"></script>
+   <script src="./javascripts/owl.carousel.min.js"></script>
+  <script>
+    $(document).ready(function(){
+  
+
+    $("#resetformOn").on("click",function(e){
+       var password= $("#password").val();
+    var cpassword= $("#cpassword").val();
+  
+
+    $(".password,.cpassword,.pcpassword").hide();
+    if(password == '' || password == undefined){
+      $(".password").show();
+      
+      event.preventDefault();
+    }else if(cpassword == '' || cpassword == undefined){
+     $(".cpassword").show();
+     event.preventDefault();
+    }else if(password != cpassword){
+      $(".pcpassword").show();
+      event.preventDefault();
+    }
+    })
+      
+  
+   
+  
+
+
+      $( "#submit_reg" ).on("click",function( event ) {
+    
+    var firstname= $("#firstname").val();
+    var lastname= $("#lastname").val();
+    var userid= $("#userid").val();
+    
+    var email_id= $("#email_id").val();
+    var cemail= $("#cemail").val();
+    var mobile= $("#mobile").val();
+    var ckbox = $('#term_condition');
+    if (ckbox.is(':checked')) {
+           var checkbox='1';
+        } else {
+          var checkbox='0';
+        }
+
+    $(".firstname,.lastname,.userid,.email_id,.cemail,.pcemail,.mobile,.allfields").hide();
+    if(firstname == '' || firstname == undefined){
+      $(".firstname").show();
+      $(".allfields").show();
+      
+      event.preventDefault();
+    }else if(lastname == '' || lastname == undefined){
+     $(".lastname").show();
+     $(".allfields").show();
+     event.preventDefault();
+    }else if(userid == '' || userid == undefined){
+      $(".userid").show();
+      $(".allfields").show();
+      event.preventDefault();
+    }else if(email_id == '' || email_id == undefined){
+      $(".email_id").show();
+      event.preventDefault();
+    }else if(cemail == '' || cemail == undefined){
+      $(".cemail").show();
+      $(".allfields").show();
+      event.preventDefault();
+    }else if(email_id != cemail){
+      $(".pcemail").show();
+      $(".allfields").show();
+      event.preventDefault();
+    }else if(mobile == '' || mobile == undefined){
+      $(".mobile").show();
+      $(".allfields").show();
+      event.preventDefault();
+    }else if(checkbox == '0'){
+      $(".term_condition").show();
+      event.preventDefault();
+    }else{
+    
+    }
+    
+
+  });
+  
+
+
+  
+  $("#success-alertAlert").fadeTo(2000, 500).slideUp(500, function() {
+      $("#success-alertAlert").slideUp(500);
+      });
+    })
+  </script>
+  
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/5ee367594a7c6258179a75d5/default';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <script>
+    $('.owl-carousel').owlCarousel({
+
+loop: false,
+margin:10,
+responsiveClass:true,
+responsive:{
+0:{
+    items:1,
+    nav:true,
+    autoplay:true,
+    autoplayTimeout:4000
+},
+600:{
+    items:2,
+    nav:false
+},
+1000:{
+    items:3,
+    nav:false,
+    loop:true,
+    autoplay:true,
+    autoplayTimeout:4000,
+    autoplayHoverPause:true
+}
+}
+})
+</script>
+  <!--End of Tawk.to Script-->
+  </body>
+</html>
