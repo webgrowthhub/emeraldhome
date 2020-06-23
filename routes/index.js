@@ -1,9 +1,15 @@
 var express = require('express');
 var router = express.Router();
+var userModel=require("../modules/register");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  var userProduct=userModel.productData.find({  product_status : 1 }).limit(20);
+  userProduct.exec((errr,Allproductts)=>{
+    res.send(Allproductts);
+      //res.render('index', {usersession: undefined  ,Allproducts: Allproductts});
+    
+  })
 });
 
 module.exports = router;
