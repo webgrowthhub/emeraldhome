@@ -1,0 +1,635 @@
+<footer class="main-footer">
+    <!-- <img src="images/footer_logo.png" height="50px" alt="logo"> -->
+    <div>
+    <strong>Copyright &copy; 2020</strong> All rights reserved.
+  </div>  
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="./plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="./javascripts/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="./javascripts/demo.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+    var content=$("#htmldata").html();
+    //   tinymce.get("#getcontents").setContent(content);
+      
+
+})
+    $(function () {
+
+    //     $(".addtocart_").on("click",function(){
+    //         $.ajax({
+    //     type: "POST",
+    //     url: "/check_existingProduct",
+    //     data: {'product_id': '5ec9df118010e205a473ccfa','qty':1},
+    //    success: function(r){
+    //     if(r == 0){
+    //         window.location.href="/cart";
+            
+    //     }else{
+          
+    //     $.ajax({
+    //     type: "POST",
+    //     url: "/admin/save_cartdata_free",
+    //     data: {'product_id': '5ec9df118010e205a473ccfa','qty':1},
+    //    success: function(r){
+    //     if(r == 0){
+    //          alert("Sorry this Product is now out of stock");
+    //         location.reload();
+            
+    //     }else{
+          
+    //         window.location.href="/cart";
+    //     }
+    //     },
+    //     error: function (e) {
+    //      //   console.log("some error", e);
+    //     }
+    // });
+    //     }
+    //     },
+       
+    // });
+    //     })
+
+       
+    
+
+
+
+        $.ajax({
+        type: "POST",
+        url: "/checkSession",
+        data: {'product_id': 'check'},
+       success: function(r){
+       
+       if(r == '0'){
+        $(".customerModal").modal({backdrop: 'static', keyboard: false});
+       }
+       
+        }
+       
+    });
+       
+
+       $(".check_account").on("click",function(){
+         var check_account=$(this).data("id");
+         if(check_account ==  '1'){
+            $("#MyPopup").modal({backdrop: 'static', keyboard: false});
+         }else{
+            var url=$(this).data("src");
+            window.location.href = url;
+         }
+       })
+        
+        $(".product_design").click(function () {
+            $(".customerModal").modal('hide');
+            var id=$(this).data("src");
+            var pid=$(this).data("id");
+            var thiss=$(this);
+            $.ajax({
+        type: "POST",
+        url: "/admin/get_pdesign",
+        data: {'product_id': id},
+       success: function(r){
+          
+        r.data.forEach(function(productdata) {
+             $(".first_body").append("<div class='product_listing custom-control custom-radio'>  <input  type='radio' class='productDesign custom-control-input' name='productDesign' data-id="+productdata.productid+" value="+productdata.image+"><label class='custom-control-label'><a href='#'><img height='70px' width='70px' src="+productdata.image + "></a></label></div>");
+        })
+       
+        if(r.ProData[0].add_text == 1){
+            $(".wordingDiv").show();
+        }
+
+        if(r.ProData[0].upload_image != 0){
+            $(".UploadImageDiv").show();
+        }
+        $(".productID").val(thiss.data("id"));
+        if(r.data != '' || r.ProData[0].add_text == 1 || r.ProData[0].upload_image != 0)
+        $("#MyPopup").modal({backdrop: 'static', keyboard: false});
+        
+        
+        },
+        error: function (e) {
+         //   console.log("some error", e);
+        }
+    });
+           
+        });
+
+
+
+        $(".assign_image").click(function () {
+            var id=$(this).data("id");
+            var check=confirm("Are you Sure!");
+        if(check){
+            $.ajax({
+        type: "POST",
+        url: "/assign_image",
+        data: {'image_id': id},
+       success: function(r){
+        location.reload();
+        },
+        error: function (e) {
+         //   console.log("some error", e);
+        }
+    });
+        }
+           
+        });
+
+
+        $(".reassign_image").click(function () {
+            var id=$(this).data("id");
+            var check=confirm("Are you Sure!");
+        if(check){
+            $.ajax({
+        type: "POST",
+        url: "/reassign_image",
+        data: {'image_id': id},
+       success: function(r){
+        location.reload();
+        },
+        error: function (e) {
+         //   console.log("some error", e);
+        }
+    });
+        }
+           
+        });
+
+        
+    });
+</script>
+<script>
+    $(".sidebar_toggle").click(function(){
+  $("body").toggleClass("sidebar_view"); 
+});
+  function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#Image_placeholder')
+                    .attr('src', e.target.result);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+            $("#Image_placeholder").show();
+        }
+    }
+
+    function readVideoURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#video_placeholder')
+                    .attr('src', e.target.result);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+            $("#video_placeholder").show();
+        }
+    }
+</script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<script src="assets/js/flyto.js"></script>
+    <script>
+        $('.items').flyto({
+            item      : '.li',
+            target    : '.cart',
+            button    : '.my-btn'
+        });
+       
+
+        
+    </script>
+<script>
+  $(document).ready(function(){
+
+    $( "#updatesubmit" ).on("click",function( event ) {
+      
+    var firstname= $("#inputName").val();
+    var lastname= $("#lastname").val();
+    var inputDate= $("#inputDate").val();
+    var inputDateDeath= $("#inputDateDeath").val();
+    var story= $("#inputExperience").val();
+    var videoInputFile= $("#videoInputFile").val();
+    
+    $(".firstname,.lastname,.inputDate,.inputDateDeath,.story,.allpfields").hide();
+    if(firstname == '' || firstname == undefined){
+      $(".inputName").show();
+      $(".allpfields").show();
+      event.preventDefault();
+    }else if(lastname == '' || lastname == undefined){
+     $(".lastname").show();
+     $(".allpfields").show();
+     event.preventDefault();
+    }else if(inputDate == '' || inputDate == undefined){
+      $(".inputDate").show();
+      $(".allpfields").show();
+      event.preventDefault();
+    }else if(inputDateDeath == '' || inputDateDeath == undefined){
+      $(".inputDateDeath").show();
+      $(".allpfields").show();
+      event.preventDefault();
+    }else if(story == '' || story == undefined){
+      $(".inputExperience").show();
+      $(".allpfields").show();
+      event.preventDefault();
+    }
+    
+
+  });
+
+  $( "#updatesubmit2" ).on("click",function( event ) {
+      
+      var firstname= $("#inputName").val();
+      var lastname= $("#lastname").val();
+      var story= $("#inputExperience").val();
+      var videoInputFile= $("#videoInputFile").val();
+      var radioValue = $("input[name='profiledesign']:checked").val();
+      
+      $(".firstname,.lastname,.story,.videoInputFile,.allpfields,.radioinputt").hide();
+      if(firstname == '' || firstname == undefined){
+        $(".inputName").show();
+        $(".allpfields").show();
+        event.preventDefault();
+      }else if(lastname == '' || lastname == undefined){
+       $(".lastname").show();
+       $(".allpfields").show();
+       event.preventDefault();
+      }else if(story == '' || story == undefined){
+        $(".inputExperience").show();
+        $(".allpfields").show();
+        event.preventDefault();
+      }   
+        else if(videoInputFile != '' && videoInputFile != undefined){
+            if( radioValue == '' || radioValue == undefined){
+                $(".radioinputt").show();
+        $(".allpfields").show();
+        event.preventDefault();
+        }
+        }
+     
+      
+  
+    });
+      
+    $("#success-alert").fadeTo(2000, 500).slideUp(500, function() {
+      $("#success-alert").slideUp(500);
+    });
+
+
+    $('.add').click(function () {
+        var qtyval = $(this).closest("div").find("input[name='qtynum']").val();
+        if ($(this).prev().val() < 3) {
+    	$(this).prev().val(+$(this).prev().val() + 1);
+		}
+    });
+    $('.sub').click(function () {
+            if ($(this).next().val() > 1) {
+            if ($(this).next().val() > 1) $(this).next().val(+$(this).next().val() - 1);
+            }
+    });
+
+    
+    $(".delete-image").on("click",function(){
+        var id=$(this).data("id");
+        var check=confirm("Are you Sure!");
+        if(check){
+            $.ajax({
+        type: "POST",
+        url: "/delete_image",
+        data: {'image_id': id},
+       success: function(r){
+        location.reload();
+        },
+        error: function (e) {
+         //   console.log("some error", e);
+        }
+    });
+        }
+       
+    })
+
+    $(".delete-video").on("click",function(){
+        var id=$(this).data("id");
+        var check=confirm("Are you Sure!");
+        if(check){
+            $.ajax({
+        type: "POST",
+        url: "/delete_video",
+        data: {'video_id': id},
+       success: function(r){
+        location.reload();
+        },
+        error: function (e) {
+         //   console.log("some error", e);
+        }
+    });
+        }
+       
+    })
+
+    $(".delete-audio").on("click",function(){
+        var id=$(this).data("id");
+        var check=confirm("Are you Sure!");
+        if(check){
+            $.ajax({
+        type: "POST",
+        url: "/delete_audio",
+        data: {'audio_id': id},
+       success: function(r){
+        location.reload();
+        },
+        error: function (e) {
+         //   console.log("some error", e);
+        }
+    });
+        }
+       
+    })
+
+
+    $("#proCategories").change(function(){
+       var catt=$("#proCategories").val();
+       $.ajax({
+        type: "POST",
+        url: "/setproductCategory",
+        data: {'product_catid': catt},
+       success: function(r){
+        location.reload();
+        }
+    });
+    })
+
+
+
+    $(".addtocart").on("click",function(){
+        $(".customerModal").modal('hide');
+       var id=$(this).data("id");
+       var this_ele=$(this);
+       var qtyval = $(this).closest("div").find("input[name='qtynum']").val();
+        $.ajax({
+        type: "POST",
+        url: "/admin/save_cartdata",
+        data: {'product_id': id,'qty':1},
+       success: function(r){
+        if(r == 0){
+            this_ele.prop('disabled', true);
+            alert("Sorry this Product is now out of stock");
+            location.reload();
+            
+        }else{
+            $.ajax({
+        type: "POST",
+        url: "/setsession",
+        data: {'user': r.sessionemail, 'guesnum': r.guestno},
+       success: function(r){
+       
+        }
+    });
+        }
+        },
+        error: function (e) {
+         //   console.log("some error", e);
+        }
+    });
+    })
+
+
+    $(".changeImage").on("click",function(){
+   var imagsrc= $(this).find('img').attr('src');
+  $("#mainfeatureimage").attr("src", imagsrc);
+   
+  })
+
+
+
+    $("#ImageForm").on("submit",function(e){
+      e.preventDefault();
+      var formData =  new FormData(this);
+
+
+      $.ajax({
+        
+        type: "POST",
+        url: "/checkadd_images",
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(r){
+            if(r == 0){
+                $("#MyPopup").modal();
+            }else{
+               
+
+
+      $.ajax({
+        xhr: function() {
+                var xhr = new window.XMLHttpRequest();
+                xhr.upload.addEventListener("progress", function(evt) {
+                    if (evt.lengthComputable) {
+                        var percentComplete = ((evt.loaded / evt.total) * 100);
+                        $(".progress-bar").width(percentComplete + '%');
+                        $(".progress-bar").html(percentComplete+'%');
+                    }
+                }, false);
+                return xhr;
+            },
+            beforeSend: function() {
+         $(".progress-bar").width('0%');
+         },
+          error:function(){
+                $('.uploadStatus').html('<p style="color:#EA4335;">File upload failed, please try again.</p>');
+            },
+        type: "POST",
+        url: "/add_images",
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(r){
+          
+                window.location.href = "/add_images";
+            
+         
+        },
+        error: function (e) {
+            console.log("some error", e);
+        }
+    });
+            }
+         
+        }
+        
+    });
+
+
+
+    })
+// for Video upload  //
+    $("#VideoUploadform").on("submit",function(e){
+      e.preventDefault();
+      var checkinput=$("#videoInputFile").val();
+      if(checkinput != ''){
+        var formData =  new FormData(this);
+      $.ajax({
+        xhr: function() {
+                var xhr = new window.XMLHttpRequest();
+                xhr.upload.addEventListener("progress", function(evt) {
+                    if (evt.lengthComputable) {
+                        var percentComplete = ((evt.loaded / evt.total) * 100);
+                        $(".progress-bar").width(percentComplete + '%');
+                        $(".progress-bar").html(percentComplete+'%');
+                    }
+                }, false);
+                return xhr;
+            },
+        type: "POST",
+        url: "/add_video",
+        data: formData,
+        processData: false,
+        contentType: false,
+        beforeSend: function() {
+         $(".progress-bar").width('0%');
+         $('#uploadStatus').html('<p style="color:Black;"> Uploading.....( Please Wait until File is Uploded. )!</p>');
+         },
+          error:function(eee){
+              $('#uploadStatus').html('<p style="color:#EA4335;">File upload failed,Must be A Video File! Please try again.</p>');
+            },
+        success: function(r){
+            if(r == 'true'){
+                $('#uploadStatus').html('<p style="color:#28A74B;">File has uploaded successfully!</p>');
+           window.location.href = "/add_video";
+            }else{
+                $('#uploadStatus').html('<p style="color:#EA4335;">File upload failed, please try again.</p>');
+            }
+        
+        }
+    });
+      }else{
+          alert("Please Select A Video!");
+      }
+      
+    })
+    //Custom Video Upload function //
+
+    $("#Video_custom").on("submit",function(e){
+      e.preventDefault();
+      var formData =  new FormData(this);
+      $.ajax({
+        xhr: function() {
+                var xhr = new window.XMLHttpRequest();
+                xhr.upload.addEventListener("progress", function(evt) {
+                    if (evt.lengthComputable) {
+                        var percentComplete = ((evt.loaded / evt.total) * 100);
+                        $(".progress-bar").width(percentComplete + '%');
+                        $(".progress-bar").html(percentComplete+'%');
+                    }
+                }, false);
+                return xhr;
+            },
+        type: "POST",
+        url: "/custom_video",
+        data: formData,
+        processData: false,
+        contentType: false,
+        beforeSend: function() {
+         $(".progress-bar").width('0%');
+         },
+          error:function(){
+                $('#uploadStatus').html('<p style="color:#EA4335;">File upload failed, please try again.</p>');
+            },
+        success: function(r){
+          $('#uploadStatus').html('<p style="color:#28A74B;">File has uploaded successfully!</p>');
+         // window.location.href = "/custom_video";
+        }
+    });
+    })
+
+//For Audio Upload //
+
+
+$("#AudioUploadform").on("submit",function(e){
+      e.preventDefault();
+      var formData =  new FormData(this);
+      $.ajax({
+        xhr: function() {
+                var xhr = new window.XMLHttpRequest();
+                xhr.upload.addEventListener("progress", function(evt) {
+                    if (evt.lengthComputable) {
+                        var percentComplete = ((evt.loaded / evt.total) * 100);
+                        $(".progress-bar").width(percentComplete + '%');
+                        $(".progress-bar").html(percentComplete+'%');
+                    }
+                }, false);
+                return xhr;
+            },
+        type: "POST",
+        url: "/add_audio",
+        data: formData,
+        processData: false,
+        contentType: false,
+        beforeSend: function() {
+         $(".progress-bar").width('0%');
+         },
+          error:function(){
+                $('.uploadStatus').html('<p style="color:#EA4335;">File upload failed, please try again.</p>');
+            },
+        success: function(r){
+          $('.uploadStatus').html('<p style="color:#28A74B;">File has uploaded successfully!</p>');
+          window.location.href = "/add_audio";
+        }
+    });
+    })
+
+  })
+
+  function ImagetoPrint(source,name,date) {
+    return "<html><head><script>function step1(){\n" +
+            "setTimeout('step2()', 10);}\n" +
+            "function step2(){window.print();window.close()}\n" +
+            "</scri" + "pt></head><body onload='step1()'>\n" +
+            "<div style='text-align:center;'><img src='" + source + "' height='600' width='600' /><h1 style='font-size:50px;'>"+name+"</h1><br><h1 font-size:70px;>"+date+"</h1></div></body></html>";
+}
+  function PrintImage(source,name,date) {
+    Pagelink = "about:blank";
+    var pwa = window.open(Pagelink, "_new");
+    pwa.document.open();
+    pwa.document.write(ImagetoPrint(source,name,date));
+    pwa.print();
+    pwa.document.close();
+}
+</script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/5ee367594a7c6258179a75d5/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+</html>
