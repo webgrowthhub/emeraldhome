@@ -1,153 +1,280 @@
 <footer class="footer bg-dark">
-    <div class="container text-center">
-        <img src="./images/logo.png"  alt="logo">
-     <p>All rights reserved © 2020 Emerald Park Memorial     </p>
-    </div>
-    <div class="text-center social-media"> 
-      <a target="_blank" href="https://www.facebook.com/Emerald-Park-Memorial-114866203602869/"><i class="fab fa-facebook-f" aria-hidden="true"></i> </a>
-      <a target="_blank" href="https://www.instagram.com/emerald_park_memorial/"> <i class="fab fa-instagram" aria-hidden="true"></i> </a> </div>
+  <div class="container text-center">
+      <img src="./images/logo.png"  alt="logo">
+   <p>All rights reserved © 2020 Emerald Park Memorial     </p>
+  </div>
+  <div class="text-center social-media"> 
+    <a target="_blank" href="https://www.facebook.com/Emerald-Park-Memorial-114866203602869/"><i class="fab fa-facebook-f" aria-hidden="true"></i> </a>
+    <a target="_blank" href="https://www.instagram.com/emerald_park_memorial/"> <i class="fab fa-instagram" aria-hidden="true"></i> </a> </div>
 </footer>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-   <script src="./javascripts/jquery.min.js"></script>
-   <script src="./javascripts/owl.carousel.min.js"></script>
-  <script>
-    $(document).ready(function(){
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   
-
-    $("#resetformOn").on("click",function(e){
-       var password= $("#password").val();
-    var cpassword= $("#cpassword").val();
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ 
   
-
-    $(".password,.cpassword,.pcpassword").hide();
-    if(password == '' || password == undefined){
-      $(".password").show();
-      
-      event.preventDefault();
-    }else if(cpassword == '' || cpassword == undefined){
-     $(".cpassword").show();
-     event.preventDefault();
-    }else if(password != cpassword){
-      $(".pcpassword").show();
-      event.preventDefault();
-    }
-    })
-      
+ <script src="./javascripts/jquery.min.js"></script>
+ <script src="./javascripts/owl.carousel.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
+ 
+ <script>
+  // Get the modal
+  var modal = document.getElementById("myModal");
   
+  // Get the image and insert it inside the modal - use its "alt" text as a caption
+  var img = document.getElementById("myImg");
+  var modalImg = document.getElementById("img01");
+ 
+  img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
    
+  }
   
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+  
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() { 
+    modal.style.display = "none";
+  }
+  </script>
+
+<script>
+  $(document).ready(function(){
+// image zoom on home page //
+    $(".myImg").on("click",function(){
+       // Get the modal
+   var modal = document.getElementById("myModal");
+  
+  // Get the image and insert it inside the modal - use its "alt" text as a caption
+  // var img = document.getElementById("myImg");
+  var img= $(this).attr("src");
+ var modalImg = document.getElementById("img01");
+ modal.style.display = "block";
+    modalImg.src = this.src;
+  
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+  
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() { 
+    modal.style.display = "none";
+  }
+    })
+
+     // End image zoom on home page //
+
+  $("#resetformOn").on("click",function(e){
+     var password= $("#password").val();
+  var cpassword= $("#cpassword").val();
 
 
-      $( "#submit_reg" ).on("click",function( event ) {
+  $(".password,.cpassword,.pcpassword").hide();
+  if(password == '' || password == undefined){
+    $(".password").show();
     
-    var firstname= $("#firstname").val();
-    var lastname= $("#lastname").val();
-    var userid= $("#userid").val();
+    event.preventDefault();
+  }else if(cpassword == '' || cpassword == undefined){
+   $(".cpassword").show();
+   event.preventDefault();
+  }else if(password != cpassword){
+    $(".pcpassword").show();
+    event.preventDefault();
+  }
+  })
     
-    var email_id= $("#email_id").val();
-    var cemail= $("#cemail").val();
-    var mobile= $("#mobile").val();
-    var ckbox = $('#term_condition');
-    if (ckbox.is(':checked')) {
-           var checkbox='1';
-        } else {
-          var checkbox='0';
-        }
 
-    $(".firstname,.lastname,.userid,.email_id,.cemail,.pcemail,.mobile,.allfields").hide();
-    if(firstname == '' || firstname == undefined){
-      $(".firstname").show();
-      $(".allfields").show();
+ 
+
+
+
+    $( ".signup_reisterationform" ).on("submit",function( event ) {
+      event.preventDefault();
       
-      event.preventDefault();
-    }else if(lastname == '' || lastname == undefined){
-     $(".lastname").show();
-     $(".allfields").show();
-     event.preventDefault();
-    }else if(userid == '' || userid == undefined){
-      $(".userid").show();
-      $(".allfields").show();
-      event.preventDefault();
-    }else if(email_id == '' || email_id == undefined){
-      $(".email_id").show();
-      event.preventDefault();
-    }else if(cemail == '' || cemail == undefined){
-      $(".cemail").show();
-      $(".allfields").show();
-      event.preventDefault();
-    }else if(email_id != cemail){
-      $(".pcemail").show();
-      $(".allfields").show();
-      event.preventDefault();
-    }else if(mobile == '' || mobile == undefined){
-      $(".mobile").show();
-      $(".allfields").show();
-      event.preventDefault();
-    }else if(checkbox == '0'){
-      $(".term_condition").show();
-      event.preventDefault();
-    }else{
-    
-    }
-    
+     
+  var firstname= $("#firstname").val();
+  var lastname= $("#lastname").val();
+  var userid= $("#userid").val();
+  
+  var email_id= $("#email_id").val();
+  var cemail= $("#cemail").val();
+  var mobile= $("#mobile").val();
+  var ckbox = $('#term_condition');
+  var password = $("#password").val();
+   var cpassword= $("#cpassword").val();
+  if (ckbox.is(':checked')) {
+         var checkbox='1';
+      } else {
+        var checkbox='0';
+      }
 
+  $(".firstname,.lastname,.userid,.email_id,.cemail,.pcemail,.mobile,.allfields,.password,.cpassword,.pcpassword").hide();
+  if(firstname == '' || firstname == undefined){
+    $(".firstname").show();
+    $(".allfields").show();
+    
+    
+  }else if(lastname == '' || lastname == undefined){
+   $(".lastname").show();
+   $(".allfields").show();
+  //  event.preventDefault();
+  }else if(userid == '' || userid == undefined){
+    $(".userid").show();
+    $(".allfields").show();
+    // event.preventDefault();
+  }else if(password == '' || password == undefined){
+    $(".password").show();
+    $(".allfields").show();
+    // event.preventDefault();
+  }else if(cpassword == '' || cpassword == undefined){
+    $(".cpassword").show();
+    $(".allfields").show();
+    // event.preventDefault();
+  }else if(password != cpassword){
+    $(".pcpassword").show();
+    $(".allfields").show();
+    // event.preventDefault();
+  }else if(email_id == '' || email_id == undefined){
+    $(".email_id").show();
+    // event.preventDefault();
+  }else if(cemail == '' || cemail == undefined){
+    $(".cemail").show();
+    $(".allfields").show();
+    // event.preventDefault();
+  }else if(email_id != cemail){
+    $(".pcemail").show();
+    $(".allfields").show();
+    // event.preventDefault();
+  }else if(mobile == '' || mobile == undefined){
+    $(".mobile").show();
+    $(".allfields").show();
+    // event.preventDefault();
+  }else if(checkbox == '0'){
+    $(".term_condition").show();
+    // event.preventDefault();
+  }else{
+    
+    // event.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "/admin/save_cartdata",
+      data: {'product_id': '5ec9df118010e205a473ccfa','qty':1},
+     success: function(r){
+      if(r == 0){
+           alert("Sorry this Product is now out of stock");
+          location.reload();
+          
+      }else{
+        
+         $.ajax({
+      type: "POST",
+      url: "/setsession",
+      data: {'user': r.sessionemail, 'guesnum': r.guestno},
+     success: function(r){
+      $.ajax({
+      type: "POST",
+      url: "/signup",
+      data: {'firstname': firstname, 'lastname': lastname , 'userid' : userid ,'email_id' : email_id ,'password' : password,'mobile' : mobile},
+     success: function(r2){
+      if(r2 == 0){
+        alert("Email Aready Exist!");
+       }else if(r2 == 2){
+        alert("UserNAme Aready Exist!");
+       }else{
+        window.location.href = "/signup_cart";
+       }
+      
+      }
+  });
+      }
+  });
+      }
+      },
+      error: function (e) {
+       //   console.log("some error", e);
+      }
   });
   
+ 
+
+  }
+  
+
+});
 
 
-  
-  $("#success-alertAlert").fadeTo(2000, 500).slideUp(500, function() {
-      $("#success-alertAlert").slideUp(500);
-      });
-    })
-  </script>
-  
+
+
+$("#success-alertAlert").fadeTo(2000, 500).slideUp(500, function() {
+    $("#success-alertAlert").slideUp(500);
+    });
+  })
+</script>
+
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src='https://embed.tawk.to/5ee367594a7c6258179a75d5/default';
-  s1.charset='UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-  })();
-  </script>
-  <script>
-    $('.owl-carousel').owlCarousel({
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5ee367594a7c6258179a75d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
+<script>
+$('[data-toggle="lightbox"]').on('click', function(e) {
+e.preventDefault();
+$(this).ekkoLightbox({
+  onShow: function() {
+    $('body').addClass('lightbox-open');
+  },
+  onHidden: function() {
+    $('body').removeClass('lightbox-open');
+  },
+});
+$('.ekko-lightbox').addClass('scale');
+});
+</script>
+<script>
+  $('.owl-carousel').owlCarousel({
 
 loop: false,
 margin:10,
 responsiveClass:true,
 responsive:{
 0:{
-    items:1,
-    nav:true,
-    autoplay:true,
-    autoplayTimeout:4000
+  items:1,
+  nav:true,
+  autoplay:true,
+  autoplayTimeout:4000
 },
 600:{
-    items:2,
-    nav:false
+  items:2,
+  nav:false
 },
 1000:{
-    items:3,
-    nav:false,
-    loop:true,
-    autoplay:true,
-    autoplayTimeout:4000,
-    autoplayHoverPause:true
+  items:3,
+  nav:false,
+  loop:true,
+  autoplay:true,
+  autoplayTimeout:4000,
+  autoplayHoverPause:true
 }
 }
 })
+
+
 </script>
-  <!--End of Tawk.to Script-->
-  </body>
+
+
+<!--End of Tawk.to Script-->
+</body>
 </html>

@@ -2,12 +2,108 @@ body {
     color:#000;
     font-family: 'Georgia';
 }
-
+body p, body li, body span {
+    word-wrap: break-word;
+}
 .user-images {
     display: flex;
 }
+img.img-fluid.special_image {
+    margin-top: -136px;
+    margin-bottom: 26px;
+}
+p.special_content {
+    font-size: 13px;
+}
+
+.special-offer {
+    position: absolute;
+    right: 145px;
+}
+section.create-memories.section-text {
+    position: relative;
+}
+.view_videos .card-body h3 {
+    height: 31px;
+    font-size: 20px;
+    margin-bottom: 0;
+} 
+.m_view {
+    display: none;
+}
+/**------------ Blog pge --------***/
+.blog-table th:nth-child(5), .blog-table td:nth-child(5) {
+    min-width: 300px;
+}
+.blog-table td {
+      /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto; 
+}
+.blog-single textarea {
+    width: 100%;
+    border: none;
+    resize: none;
+    min-height: 500px;
+    max-height: 1000px;
+    height: 100%;
+}
+.blog-single textarea:focus {
+    outline: none;
+}
+.blogs-page textarea.card-text {
+    width: 100%;
+    min-height: 360px;
+}   
+.blog-single figure img {
+    height: 300px;
+    object-fit: cover;
+    max-width: 100%;
+}
+.inner-pages nav.main_menu {
+    margin: 0 !important;
+}
+.inner-pages footer.main-footer {
+    text-align: center;
+    display: block;
+    padding: 22px;
+}
+.inner-pages h2.card-title {
+    font-size: 24px;
+}
+.inner-pages-header h2 {
+    margin-top: 26px;
+    font-size: 64px !important;
+}
+.blogs-page a.btn.btn-primary {
+    background: #479796;
+    border: 1px solid;
+}
+.blogs-page a.btn.btn-primary:hover {
+    background: #000;
+}
+.blogs-page img.card-img-top {
+    height: 280px;
+    max-width: 100%;
+    object-fit: cover;
+}
+/**------------ Blog pge --------***/
+
+
 /*------- home page new section ------------*/
-.honourthepast img {
+.honourthepast .productssales {
     max-height: 240px;
     object-fit: contain;
 }
@@ -29,7 +125,7 @@ body {
     background-repeat: no-repeat;
     background-size: 77%;
     padding: 120px 0;
-    background-position: right top;
+    background-position: right bottom;
     margin: 0px 0;
 } 
 .create-memories p {
@@ -39,7 +135,8 @@ body {
     margin-bottom: 20px;
 }
 a.cta-btn {
-    background: #479796;
+    /* background: #479796; */
+    background: #e2e22e;
     color: #fff;
     padding: 11px 26px;
     display: inline-block;
@@ -48,6 +145,13 @@ a.cta-btn {
     line-height: 28px;
     min-height: 56px;
     margin-top: 13px;
+}
+
+a.cta-btn2 {
+    /* background: #479796; */
+    background: #e2e22e;
+    color: #fff;
+    
 }
 a.cta-btn:hover {
     text-decoration: none;
@@ -83,6 +187,7 @@ section.build-legacy {
 .section-text p {
     font-size: 16px;
     line-height: 22px;
+    word-break: break-word;
 }  
 .bg-green--light {
     background: #c6e4e6;
@@ -107,8 +212,17 @@ section.build-legacy {
 .honourthepast {
     padding: 60px 0;
 }
-.honourthepast .col-12 {
+.honourthepast  .owl-carousel .col-12 {
     padding: 0;
+}
+.products_row .column-5 img {
+    max-width: 100%;
+}
+.products_row .column-5 {
+    max-width: 20%;
+}
+.products_row {
+    margin-top: 28px !important;
 }
 a.view-all-products {
     font-size: 26px;
@@ -378,20 +492,131 @@ a.forget_pass {
 }
 /********* login and sign up pages *******/
 
-
+a.visit_profile {
+    padding: 9px 25px;
+    margin: 0 10px;
+    border: 1px solid #479796;
+    border-radius: 5px;
+    font-size: 16px;
+    text-decoration: none;
+    /* color: #000; */
+}
+a.visit_profile:hover {
+    background: #479796;
+    color: #fff;
+}
 /******** responsive *******/
-@media screen and (max-width:1360px) { 
+@media screen and (min-width:1900px) { 
+    section.header-banner img {
+        width: 100%;
+    }
+    .create-memories {
+        background: #fefefe url(../images/memories.png);
+        background-repeat: no-repeat;
+        background-size: 60%;
+        padding: 112px 0 57px; 
+        background-position: right -51px bottom;
+        margin: 0px 0;
+    }
+} 
+@media screen and (min-width:1600px) { 
+    p.special_content {
+        padding: 0;
+        display: block;
+        width: 255px;
+        text-align: center;
+    }
+    .special-offer {
+        position: absolute;
+        right: 349px;
+    }
+    .special-offer img {
+        width: 72%;
+    }
+    .create-memories {
+        background: #fefefe url(../images/memories.png);
+        background-repeat: no-repeat;
+        background-size: 55%;
+        padding: 112px 0 57px; 
+        background-position: right -51px bottom;
+        margin: 0px 0;
+    }
+    .products_row .column-5 {
+        max-width: 20%;
+    }
+}
+@media screen and (min-width:1024px) and (max-width:1366px)  {  
+    .special-offer img {
+        max-width: 50%;
+    }
+    .special-offer {
+        position: absolute;
+        right: 273px;
+        text-align: center;
+        top: 137px;
 
+    }
+    p.special_content {
+        width: 209px;
+        margin: 6px auto !important;
+        padding: 0;
+    }
+}
+@media screen and (max-width:1360px) { 
+    .special-offer img {
+        max-width: 50%;
+    }
+    .special-offer {
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 171px;
+
+    }
+    p.special_content {
+        width: 209px;
+        margin: 6px auto !important;
+        padding: 0;
+    }
+   
     .create-memories {
         background: #fefefe url(../images/memories.png);
         background-repeat: no-repeat;
         background-size: 83%;
         padding: 112px 0 57px;
-        background-position: right -51px top;
+        background-position: right -51px bottom;
         margin: 0px 0;
+    }
+    .products_row .column-5 {
+        max-width: 20%;
     }
 } 
 @media screen and (max-width:992px) { 
+    .special-offer img {
+        max-width: 50%;
+    }
+    .special-offer {
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 20px;
+
+    }
+    p.special_content {
+        width: 176px;
+        margin:6px auto !important;
+    }
+    p.special_content {
+        font-size: 16px;
+        margin: 36px 0;
+    }
+    img.img-fluid.special_image {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .products_row .column-5 {
+        max-width: 20%;
+    }
     .main_menu.navbar-dark .navbar-nav .nav-link {
         color: #fff;
         font-size: 11px !important;
@@ -432,7 +657,7 @@ a.forget_pass {
         background-repeat: no-repeat;
         background-size: 89%;
         padding: 37px 0;
-        background-position: right -78px top;
+        background-position: right -78px bottom;
         margin: 0px 0;
     }
     
@@ -447,6 +672,8 @@ a.forget_pass {
         font-size: 14px;
         line-height: 22px;
         padding: 0;
+        
+    word-break: break-word;
     }
     a.cta-btn {
         font-size: 18px;
@@ -485,6 +712,17 @@ a.forget_pass {
     }
 }
 @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) { 
+    p.special_content {
+        font-size: 16px;
+        margin: 36px 0;
+    }
+    img.img-fluid.special_image {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .products_row .column-5 {
+        max-width: 50%;
+    }
     .heading--b.blue-bg {
         padding: 40px 0px;
         margin-bottom: 0;
@@ -518,7 +756,7 @@ a.forget_pass {
         background-repeat: no-repeat;
         background-size: 89%;
         padding: 37px 0;
-        background-position: right -78px top;
+        background-position: right -78px bottom;
         margin: 0px 0;
     }
     
@@ -533,6 +771,8 @@ a.forget_pass {
         font-size: 14px;
         line-height: 22px;
         padding: 0;
+        
+    word-break: break-word;
     }
     a.cta-btn {
         font-size: 18px;
@@ -569,9 +809,63 @@ a.forget_pass {
     .create_account {
         padding: 0px 0px;
     }
+    .special-offer img {
+        max-width: 50%;
+    }
+    .special-offer {
+        position: absolute;
+        right: 0;
+        text-align: center;
+    }
+    p.special_content {
+        width: 176px;
+        margin: 6px auto;
+    }
 }
 
 @media screen and (max-width:767px) {
+    .m_view p:last-child {
+        word-break: break-all;
+    }
+    .m_view .special_content {
+        text-align: center;
+    }
+    .m_hide {
+        display: none;  
+    }
+    .m_view {
+        display: block !important;
+    }
+    p.special_content.m_view {
+        text-align: center;
+    }
+    .special-offer.m_view {
+        display: block;
+        position: relative;
+    }
+    .special-offer {
+       display: none;
+    }
+    .d-flex.align-items-center.flex-wrap.button-section-offer {
+        text-align: center;
+        justify-content: center;
+    }
+    .special-offer img {
+        max-width: 62%;
+        margin: 0 auto;
+        display: block;
+    }
+    p.special_content {
+        font-size: 16px;
+        margin: 36px 0;
+    }
+    img.img-fluid.special_image {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .products_row .column-5 {
+        max-width: 100%;
+    }
     a.view-all-products {
         font-size: 19px;
         color: #000;
@@ -632,18 +926,30 @@ a.forget_pass {
         padding: 40px 0;
         color: #fff;
     }
-
+    a.visit_profile {
+        margin: 7px 0px ;
+    }
+    p.special_content {
+        margin-top: 22px !important;
+        word-break: break-word;
+        width: 100%; 
+    }
     .section-text p {
         font-size: 14px;
         line-height: 22px;
         padding: 0;
+        width: 100%;
+        word-break: break-word;
     }
     a.cta-btn {
-        font-size: 18px;
+    font-size: 18px;
     border-radius: 13px;
     line-height: 27px;
     min-height: 45px;
-    margin-top: 13px;
+    margin: auto;
+    display: block;
+    width: 67%
+
     }
     .col-12.row.my-4.profile_links {
         width: 100%;
@@ -702,6 +1008,8 @@ margin: 50px 0px 0;
     }
     .login_signup form {
         padding: 30px 20px;
+        margin-top: 60px;
+
     }
 
     .login-bg {

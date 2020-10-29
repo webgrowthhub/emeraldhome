@@ -1,3 +1,9 @@
+.view_videos .card-body h3 {
+    height: 31px;
+    font-size: 20px;
+    margin-bottom: 0;
+    font-weight: bold;
+} 
 .note_section_images {
     display: flex;
 }   
@@ -506,4 +512,8 @@ span.in_stock {
     
     
      }
+
+     table.mce-item-table,.mce-item-table td,.mce-item-table th,.mce-item-table caption{
+        border: none;
+        }
 

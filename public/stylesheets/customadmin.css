@@ -17,7 +17,38 @@
     max-width: 23%;
     flex: 0 0 23%;
  }
+ .blog-table th:nth-child(5), .blog-table td:nth-child(5) {
+   min-width: 300px;
+    width: 300px !important;
+}
+.blog-table th:nth-child(1), .blog-table td:nth-child(1) {
+   width: 45px;
+}
+.blog-table .profile-user-img {
+   width: 84px;
+   height: 84px;
+   object-fit: cover;
+}
+.blog-table th:nth-child(2), .blog-table td:nth-child(2) {
+   width: 100px;
+}
+.blog-table td {
+     /* These are technically the same, but use both */
+ overflow-wrap: break-word;
+ word-wrap: break-word;
 
+ -ms-word-break: break-all;
+ /* This is the dangerous one in WebKit, as it breaks things wherever */
+ word-break: break-all;
+ /* Instead use this non-standard one: */
+ word-break: break-word;
+
+ /* Adds a hyphen where the word breaks, if supported (No Blink) */
+ -ms-hyphens: auto;
+ -moz-hyphens: auto;
+ -webkit-hyphens: auto;
+ hyphens: auto; 
+}
 
 
 @media only screen and (max-width: 600px) {
