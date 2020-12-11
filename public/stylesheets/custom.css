@@ -136,8 +136,8 @@ section.create-memories.section-text {
 }
 a.cta-btn {
     /* background: #479796; */
-    background: #e2e22e;
-    color: #fff;
+    background: orange;
+    color: #000;
     padding: 11px 26px;
     display: inline-block;
     font-size: 25px;
@@ -149,13 +149,13 @@ a.cta-btn {
 
 a.cta-btn2 {
     /* background: #479796; */
-    background: #e2e22e;
-    color: #fff;
+    background: orange;
+    color: #000;
     
 }
 a.cta-btn:hover {
     text-decoration: none;
-    background: black;
+    /* background: black; */
 }  
 
 .bg-green {
