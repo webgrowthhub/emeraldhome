@@ -90,7 +90,26 @@
     
 
  
-
+  $('#contactusForm').on("submit",function( event ) {
+        event.preventDefault();
+        var dataString = $(this).serialize();
+                $.ajax({
+                    type : "POST",
+                    url : "/contctus",
+                    data :  dataString,
+                   
+                    success: function(response) {
+          if(response.responseDesc == 'Sucess'){
+            $(".gsuceesscheck").show();
+            $(".gcheck").hide();
+            $('#sumitbutton').prop('disabled', true);
+          }else{
+            $(".gcheck").show();
+          }
+          
+         }
+                });
+      });
 
 
     $( ".signup_reisterationform" ).on("submit",function( event ) {
