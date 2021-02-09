@@ -38,6 +38,28 @@ app.use(session({
 }));
 
 app.post('/contctus', (req,res)=>{  
+  console.log(req.body);
+  if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
+    return res.send({"responseCode" : 1,"responseDesc" : "Please select captcha"});
+  }
+
+  // Put your secret key here.
+  var secretKey = "6LeyAyAaAAAAAOLGSp7rhGiLelo2ZuXVB_UW5pm-";
+  // req.connection.remoteAddress will provide IP address of connected user.
+  var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
+  
+
+  request(verificationUrl,function(error,response,body) {
+    body = JSON.parse(body);
+    // console.log(body);
+    // Success will be true or false depending upon captcha validation.
+    if(body.success !== undefined && !body.success) {
+      return res.json({"responseCode" : 1,"responseDesc" : "Failed captcha verification"});
+    }
+  //  return res.json({"responseCode" : 0,"responseDesc" : "Sucess"});
+  });
+
+
   var name=req.body.name;
   var email = req.body.email;
   var message= req.body.message;
@@ -66,7 +88,7 @@ app.post('/contctus', (req,res)=>{
      }
      });
  
-   // send mail with defined transport object
+  //  send mail with defined transport object
    let info =  transporter.sendMail({
      from: email, // sender address
      to: "info@emeraldparkmemorial.com.au", // list of receivers
@@ -76,9 +98,9 @@ app.post('/contctus', (req,res)=>{
    });
  
  
- 
+  return res.json({"responseCode" : 0,"responseDesc" : "Sucess"});
 
-      res.redirect("/");
+  //  return   res.redirect("/");
     
 });
 

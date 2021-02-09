@@ -1,4 +1,5 @@
 <%- include header.ejs %>
+<script src='https://www.google.com/recaptcha/api.js'></script>
     <section class="header-banner">
       <img class="img-fluid" src="./images/header-img.png" alt="image" alt="header-image">
     </section>
@@ -8,23 +9,22 @@
          <div class="container">
             <div class="special-offer">
                 <img   class="img-fluid special_image" src="images/star-png.png" alt="qrcode"/>
-                <p class="special_content"> <b>Free With Every New Account <br> Picture Frame With Your Virtual Memorial Plaque Embedded. </b></p>
+                <p class="special_content"> <b>Free With Every New Account:- <br> Picture Frame With Your Virtual Memorial Plaque Embedded.</b> </p>
 
             </div>     
           
             <div class="col-12 col-md-8 col-lg-8 col-xl-8">
                 <h2 class="section-title"> Create lasting memories</h2>   
                 <p> <strong> Step 1. </strong> Create your account </p>
-                <p>  <strong> Step 2. </strong>Make Payment</p>
-                <p>  <strong> Step 3. </strong>Create an easy step by step virtual memorial of your passed loved one’s life by adding video, images, music, audio or an obituary.</p>
-                <p>  <strong> Step 4. </strong>Place the virtual memorial anywhere you want to remember you’re loved one’s memories.  Use a smart device to scan the virtual memorial to gain instant access of images, videos, music, audio and more of a life left behind. The virtual memorial can be placed almost anywhere. Examples not limited to; a tree, park bench, an existing urn, one of our memorabilia products, or a custom made product.<br><br>
+                <p>  <strong> Step 2. </strong> Make Payment  </p>
+                <p>  <strong> Step 3. </strong> Create an easy step by step virtual memorial of your passed loved one’s life by adding video, images, music, audio or an obituary.  </p>
+                <p>  <strong> Step 4. </strong> .  Place the virtual memorial anywhere you want to remember you’re loved one’s memories.  Use a smart device to scan the virtual memorial to gain instant access of images, videos, music, audio and more of a life left behind. The virtual memorial can be placed almost anywhere. Examples not limited to; a tree, park bench, an existing urn, one of our memorabilia products, or a custom made product.<br><br>
                     One virtual memorial profile can be duplicated and placed on multiple products, given to others enabling them all to see the life left behind when and where they want.<br>
-                    Leave memories for your family, friends, historians and future generations.
-                </p>
-                <a href="https://emeraldparkmemorial.com.au/signup" class="cta-btn">Create your account</a> 
+                    Leave memories for your family, friends, historians and future generations. </p>
+                <a href="/signup" class="cta-btn">Create your account</a> 
                 <div class="special-offer m_view">
                     <img   class="img-fluid special_image" src="images/star-png.png" alt="qrcode"/>
-                    <p class="special_content"> <b>Free With Every New Account <br> Picture Frame With Your Virtual Memorial Plaque Embedded. </b></p>
+                    <p class="special_content"> <b>Free With Every New Account:- <br> Picture Frame With Your Virtual Memorial Plaque Embedded.</b> </p>
     
                 </div>     
               
@@ -213,7 +213,7 @@
         <div class="container text-center"> 
         <form method="POST">
               
-            <h3> Search our data base for your lost loved ones </h3>
+            <h3> Search our data base  </h3>
             <div class="form-group search_form col-12 col-md-9 col-lg-9 mx-auto d-flex justify-content-center flex-wrap">
                 <div class="col-12 col-md-4 col-lg-4">
                     <label for="inputDateDeath" class="col-form-label">Enter First Name</label>
@@ -257,7 +257,7 @@
               
                 <div class="d-flex flex-wrap">
                     <div class="col-12 col-lg-6 col-md-6">
-                    <form method="POST" action="/contctus">
+                    <form method="POST" id="contactusForm" action="/contctus">
 
                         <div class="form-group">
                             <label for="email">Your Name (required)</label>
@@ -271,8 +271,10 @@
                             <label for="message">Your Message</label>
                             <textarea class="form-control" required rows="8" name="message" placeholder="Type your message"></textarea>
                         </div>
-                       
-                        <button type="submit" class="btn btn-primary">Send</button>
+                        <div class="g-recaptcha" data-sitekey="6LeyAyAaAAAAAKVR_xw9uptMMJkL2KDR87LUiawp"></div><br>
+                        <div style="display: none;" class="gcheck"><font color="red">Please Check recaptcha</font></div>
+                        <div style="display: none;" class="gsuceesscheck"><font color="green">We received your email and will get back to you soon as possible</font></div>
+                        <button type="submit" id="sumitbutton" class="btn btn-primary">Send</button>
                         </form>
                     </div>
                     <div class="col-12 col-lg-6 col-md-6">
