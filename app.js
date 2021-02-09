@@ -40,7 +40,7 @@ app.use(session({
 app.post('/contctus', (req,res)=>{  
   console.log(req.body);
   if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
-    return res.send({"responseCode" : 1,"responseDesc" : "Please select captcha"});
+    return res.json({"responseCode" : 1,"responseDesc" : "Please select captcha"});
   }
 
   // Put your secret key here.
