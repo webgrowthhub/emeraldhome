@@ -9,6 +9,7 @@ var nodemailer = require('nodemailer');
 var userModel=require("./modules/register");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const request = require('request');
 
 var app = express();
 
@@ -40,11 +41,11 @@ app.use(session({
 app.post('/contctus', (req,res)=>{  
   console.log(req.body);
   if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
-    return res.json({"responseCode" : 1,"responseDesc" : "Please select captcha"});
+    return res.send({"responseCode" : 1,"responseDesc" : "Please select captcha"});
   }
 
   // Put your secret key here.
-  var secretKey = "6LeyAyAaAAAAAOLGSp7rhGiLelo2ZuXVB_UW5pm-";
+  var secretKey = "6LfnZlAaAAAAAD8buFdV7FjoL9xcm7Gkls9K7vFd";
   // req.connection.remoteAddress will provide IP address of connected user.
   var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
   
