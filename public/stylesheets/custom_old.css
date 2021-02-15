@@ -155,7 +155,7 @@ a.cta-btn2 {
 }
 a.cta-btn:hover {
     text-decoration: none;
-    background: black;
+    /* background: black; */
 }  
 
 .bg-green {
@@ -1057,8 +1057,5 @@ margin: 50px 0px 0;
     font-size: 18px;
     display: inline-block;
 }
-span.form-control.custom_story {
-    background-color: #e9ecef;
-    }
 
 
