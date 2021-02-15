@@ -230,12 +230,14 @@ span.in_stock {
             flex-basis: auto;
         }
         .view_story_page .d-flex.flex-wrap > div {
-            width: 30%;
-            flex-basis: 30%;
+            width: 100%;
+            flex-basis: 100%;
         }
        
     }
     @media only screen and (max-width: 1024px) { 
+
+      
         .col-sm-4.col-xs-4.col-lg-4.wording {
             width: 37%;
             flex-basis: 37%;
@@ -320,6 +322,11 @@ span.in_stock {
 
 
     @media only screen and (max-width: 992px) {
+        .view_story_page .d-flex.flex-wrap > div {
+            width: 30%;
+            flex-basis: 30%;
+        }
+       
         .col-sm-4.col-xs-4.col-lg-4.wording {
             width: auto;
             flex-basis: auto;
@@ -352,6 +359,10 @@ span.in_stock {
 
     }
     @media only screen and (max-width: 768px) {
+        .view_story_page .d-flex.flex-wrap > div {
+            width: 30%;
+            flex-basis: 30%;
+        }
         .note_section_images img {
             max-width: 77px;
             height: auto;
@@ -396,6 +407,10 @@ span.in_stock {
 
     } 
     @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+        .view_story_page .d-flex.flex-wrap > div {
+            width: 100%;
+            flex-basis: 100%;
+        }
         .col-sm-4.col-xs-4.col-lg-4.wording {
             width: auto;
             flex-basis: auto;
@@ -439,6 +454,10 @@ span.in_stock {
         }   
      }
      @media (min-width: 481px) and (max-width: 767px) { 
+        .view_story_page .d-flex.flex-wrap > div {
+            width: 100%;
+            flex-basis: 000%;
+        }
         .col-sm-4.col-xs-4.col-lg-4.wording {
             width: auto;
             flex-basis: auto;
@@ -473,6 +492,10 @@ span.in_stock {
     } 
      }
     @media only screen and (max-width: 600px) {
+        .view_story_page .d-flex.flex-wrap > div {
+            width: 100%;
+            flex-basis: 100%;
+        }
         .note_section_images img {
             max-width: 100%;
             height: 100px;
@@ -516,4 +539,8 @@ span.in_stock {
      table.mce-item-table,.mce-item-table td,.mce-item-table th,.mce-item-table caption{
         border: none;
         }
+        span.form-control.custom_story {
+            background-color: #e9ecef;
+            }
+          
 
