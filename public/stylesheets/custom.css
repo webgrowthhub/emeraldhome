@@ -562,7 +562,7 @@ a.visit_profile:hover {
         padding: 0;
     }
 }
-@media screen and (max-width:1360px) { 
+@media screen and (max-width:1360px), screen and (max-width: 1599px) { 
     .special-offer img {
         max-width: 50%;
     }
